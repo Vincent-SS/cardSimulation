@@ -1,0 +1,431 @@
+@font-face {
+    font-family: kredit-front;
+    src: url("/css/font/kredit-front.woff");
+}
+
+@font-face {
+    font-family: kredit-back;
+    src: url("/css/font/kredit-back.woff");
+}
+
+@font-face {
+    font-family: kredit;
+    src: url("/css/font/kredit.woff");
+}
+
+@font-face {
+    font-family: kredit-shine;
+    src: url("/css/font/kredit-shine.woff");
+}
+
+$background: #f7f9fc;
+$pointer: pointer;
+$chipRight: 1px solid rgb(121, 121, 121);
+$chipBottom: 1px solid rgb(121, 121, 121);
+$chipLeft: 1px solid rgb(121, 121, 121);
+
+@mixin flex-center() {
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+@mixin flex-column() {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin tap-logo() {
+    border: 2px solid #000;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    transform: rotate(-90deg)
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+a:hover {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: kredit-front;
+    /* background: linear-gradient(220deg, rgba(253, 246, 246, 0.329), rgba(172, 164, 164, 0.8)); */
+    background: rgb(119, 119, 119);
+}
+
+.top__bar {
+    /* position: fixed; */
+    /* position: relative; */
+    @include flex-center();
+    background: #e7f0ff;
+    .logo {
+        @include flex-center();
+        transition: transform 0.5s ease-in-out;
+        /* transform: translateX(0px); */
+        img {
+            margin: 10px 0px 10px 20px;
+            width: 45px;
+            height: 40px;
+            cursor: $pointer;
+        }
+        .brand {
+            cursor: $pointer;
+        }
+    }
+    .logo:hover {
+        /* transition: transform 0.5s ease;
+        transform: translateX(5px); */
+        transform: scale(1.1);
+    }
+
+    .navigation {
+        display: flex;
+        margin: auto;
+        gap: 40px;
+        list-style: none;
+        position: absolute;
+        right: 50px;
+        cursor: $pointer;
+    }
+
+    .common {
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .common:hover {
+        transform: scale(1.1);
+    }
+}
+
+.card__container {
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    .card {
+        width: 600px;
+        height: 388px;
+        background-image: linear-gradient(-45deg, gray, silver 50%), repeating-linear-gradient(45deg, black, gray 3%);
+        border-radius: 25px;
+        border: double 10px transparent;
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        border-image-slice: 10;
+        border-bottom: none;
+        margin: 5px;
+        .card__top {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 40px;
+            .header {
+                font-size: 2.5em;
+                font-weight: 1000;
+                line-height: .5em;
+                text-shadow: 1px 1px 5px black;
+            }
+            .sub__header {
+                letter-spacing: .2em;
+                font-weight: 600;
+                text-shadow: 1px 1px 2px black;
+            }
+        }
+        .card::after {
+            border-radius: 25px;
+        }
+
+        .middle {
+            display: flex;
+            align-items: center;
+            position: relative;
+            align-content: flex-start;
+            top: 50px;
+            grid-template-columns: 1fr 2fr;
+            /* align-content: space-between; */
+            .chip {
+                position: absolute;
+                left: 10%;
+                width: 60px;
+                height: 60px;
+                background-image: repeating-linear-gradient(-45deg, rgba(241, 241, 241, 241), #e8e8e8 50%);
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                bottom: 3px;
+                .chip1 {
+                    width: 20px;
+                    height: 20px;
+                    border-right: $chipRight;
+                    border-bottom: $chipBottom;
+                }
+                .chip2 {
+                    width: 20px;
+                    height: 20px;
+                    border-right: $chipRight;
+                    border-bottom: $chipBottom;
+                }
+                .chip3 {
+                    position: absolute;
+                    right: 0;
+                    width: 20px;
+                    height: 20px;
+                    border-left: $chipLeft;
+                    border-bottom: $chipBottom;
+                }
+                .chip4 {
+                    width: 20px;
+                    height: 10px;
+                    border-right: $chipRight;
+                    border-bottom: $chipBottom;
+                }
+                .chip5 {
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                    top: 20px;
+                    right: 0px;
+                    border-left: $chipLeft;
+                    border-bottom: $chipBottom;
+                }
+            }
+
+            &__logo {
+                width: 160px;
+                position: absolute;
+                left: 35%;
+                bottom: -110px;
+            }
+
+            .tap {
+                display: flex;
+                align-items: center;
+                align-content: center;
+
+                &__logo {
+                    display: flex;
+
+                    align-items: center;
+                    align-content: center;
+                    position: absolute;
+                    right: 15%;
+                    &_1 {
+                        @include tap-logo();
+                        height: 15px;
+                        width: 15px;
+                    }
+                    &_2 {
+                        @include tap-logo();
+                        height: 20px;
+                        width: 20px;
+                        position: absolute;
+                    }
+                    &_3 {
+                        @include tap-logo();
+                        height: 25px;
+                        width: 25px;
+                        position: absolute;
+                    }
+                    &_4 {
+                        @include tap-logo();
+                        height: 40px;
+                        width: 40px;
+                        position: absolute;
+                        right: -15px;
+                    }
+                }
+
+                &__num {
+                    position: absolute;
+                    right: 5%;
+                    font-size: 1.2em;
+                    font-weight: bold;
+                }
+            }
+
+        }
+
+        .bottom {
+            .valid__dates {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                color: white;
+                align-content: center;
+                position: absolute;
+                left: 20%;
+                top: 65%;
+                line-height: 0.9em;
+                &_top {
+                    color: rgb(182, 182, 182);
+                    font-size: 1em;
+                }
+                &_middle {
+                    color: rgb(182, 182, 182);
+                    font-size: 1em;
+                }
+                &_bottom {
+                    font-size: 1.3rem;
+                }
+            }
+            .card__holder {
+                color: black;
+                position: absolute;
+                bottom: 7%;
+                left: 10%;
+                font-size: 1.8em;
+            }
+            .valid__year {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                right: 10%;
+                top: 65%;
+                align-items: center;
+                &_top {
+                    padding: 2px 4px;
+                    border: 1px solid black;
+                    border-width: 3px;
+                    border-style: double;
+                }
+                &_bottom {
+                    position: absolute;
+                    top: 35px;
+                    font-weight: 700;
+                    font-size: 1.6em;
+                    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                }
+            }
+        }
+    }
+
+}
+
+footer {
+    position: fixed;
+    padding: 10px 10px 0px 10px;
+    bottom: 0px;
+    height: 80px;
+    color: rgb(102, 102, 102);
+    width: 100%;
+    text-align: center;
+    background-color: black;
+}
+
+
+
+@media only screen and (max-width: 730px) {
+    .top__bar {
+        @include flex-column();
+        .logo {
+            img {
+                margin: 5px 0px 5px 0px;
+            }
+            border-bottom: 1pt solid #69a3ff;
+        }
+        .navigation {
+            @include flex-column();
+            position: relative;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            right: 0px;
+            top: 10px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .card__container {
+        height: 55%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .card {
+            width: 400px;
+            height: 250px;
+            .card__top {
+                .header {
+                    font-size: 1.7em;
+                    line-height: .1em;
+                }
+                .sub__header {
+                    font-size: 1.3em;
+                }
+            }
+            .middle {
+                top: 30px;
+                .chip {
+                    width: 45px;
+                    height: 45px;
+                    left: 15%;
+                    .chip1 {
+                        width: 15px;
+                        height: 15px;
+                    }
+                    .chip2 {
+                        width: 15px;
+                        height: 15px;
+                    }
+                    .chip3 {
+                        width: 15px;
+                        height: 15px;
+                    }
+                    .chip4 {
+                        width: 15px;
+                        height: 15px;
+                        border-bottom: 0px;
+                    }
+                    .chip5 {
+                        width: 15px;
+                        height: 15px;
+                        top: 15px;
+                    }
+                }
+                &__logo {
+                    width: 90px;
+                    left: 38%;
+                    top: -50px;
+                }
+                .tap {
+                    &__logo {
+                        right: 20%;
+                    }
+                    &__num {
+                        right: 3%;
+                    }
+                }
+            }
+
+            .bottom {
+                .valid__year {
+                    top: 64%;
+                    &_top {
+                        padding: 1px 2px;
+                        font-size: .9em;
+                    }
+                    &_bottom {
+                        font-size: 1.2em;
+                    }
+                }
+                .card__holder {
+                    font-size: 1.4em;
+                    bottom: 5%;
+                }
+            }
+        }
+
+    }
+}

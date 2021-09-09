@@ -1,0 +1,412 @@
+@font-face {
+  font-family: kredit-front;
+  src: url("/css/font/kredit-front.woff");
+}
+@font-face {
+  font-family: kredit-back;
+  src: url("/css/font/kredit-back.woff");
+}
+@font-face {
+  font-family: kredit;
+  src: url("/css/font/kredit.woff");
+}
+@font-face {
+  font-family: kredit-shine;
+  src: url("/css/font/kredit-shine.woff");
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: kredit-front;
+  /* background: linear-gradient(220deg, rgba(253, 246, 246, 0.329), rgba(172, 164, 164, 0.8)); */
+  background: #777777;
+}
+
+.top__bar {
+  /* position: fixed; */
+  /* position: relative; */
+  display: flex;
+  align-items: center;
+  align-content: center;
+  background: #e7f0ff;
+}
+.top__bar .logo {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  transition: transform 0.5s ease-in-out;
+  /* transform: translateX(0px); */
+}
+.top__bar .logo img {
+  margin: 10px 0px 10px 20px;
+  width: 45px;
+  height: 40px;
+  cursor: pointer;
+}
+.top__bar .logo .brand {
+  cursor: pointer;
+}
+.top__bar .logo:hover {
+  /* transition: transform 0.5s ease;
+  transform: translateX(5px); */
+  transform: scale(1.1);
+}
+.top__bar .navigation {
+  display: flex;
+  margin: auto;
+  gap: 40px;
+  list-style: none;
+  position: absolute;
+  right: 50px;
+  cursor: pointer;
+}
+.top__bar .common {
+  transition: transform 0.2s ease-in-out;
+}
+.top__bar .common:hover {
+  transform: scale(1.1);
+}
+
+.card__container {
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.card__container .card {
+  width: 600px;
+  height: 388px;
+  background-image: linear-gradient(-45deg, gray, silver 50%), repeating-linear-gradient(45deg, black, gray 3%);
+  border-radius: 25px;
+  border: double 10px transparent;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  border-image-slice: 10;
+  border-bottom: none;
+  margin: 5px;
+}
+.card__container .card .card__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 40px;
+}
+.card__container .card .card__top .header {
+  font-size: 2.5em;
+  font-weight: 1000;
+  line-height: 0.5em;
+  text-shadow: 1px 1px 5px black;
+}
+.card__container .card .card__top .sub__header {
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px black;
+}
+.card__container .card .card::after {
+  border-radius: 25px;
+}
+.card__container .card .middle {
+  display: flex;
+  align-items: center;
+  position: relative;
+  align-content: flex-start;
+  top: 50px;
+  grid-template-columns: 1fr 2fr;
+  /* align-content: space-between; */
+}
+.card__container .card .middle .chip {
+  position: absolute;
+  left: 10%;
+  width: 60px;
+  height: 60px;
+  background-image: repeating-linear-gradient(-45deg, #f1f1f1, #e8e8e8 50%);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  bottom: 3px;
+}
+.card__container .card .middle .chip .chip1 {
+  width: 20px;
+  height: 20px;
+  border-right: 1px solid #797979;
+  border-bottom: 1px solid #797979;
+}
+.card__container .card .middle .chip .chip2 {
+  width: 20px;
+  height: 20px;
+  border-right: 1px solid #797979;
+  border-bottom: 1px solid #797979;
+}
+.card__container .card .middle .chip .chip3 {
+  position: absolute;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  border-left: 1px solid #797979;
+  border-bottom: 1px solid #797979;
+}
+.card__container .card .middle .chip .chip4 {
+  width: 20px;
+  height: 10px;
+  border-right: 1px solid #797979;
+  border-bottom: 1px solid #797979;
+}
+.card__container .card .middle .chip .chip5 {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 20px;
+  right: 0px;
+  border-left: 1px solid #797979;
+  border-bottom: 1px solid #797979;
+}
+.card__container .card .middle__logo {
+  width: 160px;
+  position: absolute;
+  left: 35%;
+  bottom: -110px;
+}
+.card__container .card .middle .tap {
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+.card__container .card .middle .tap__logo {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  position: absolute;
+  right: 15%;
+}
+.card__container .card .middle .tap__logo_1 {
+  border: 2px solid #000;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  transform: rotate(-90deg);
+  height: 15px;
+  width: 15px;
+}
+.card__container .card .middle .tap__logo_2 {
+  border: 2px solid #000;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  transform: rotate(-90deg);
+  height: 20px;
+  width: 20px;
+  position: absolute;
+}
+.card__container .card .middle .tap__logo_3 {
+  border: 2px solid #000;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  transform: rotate(-90deg);
+  height: 25px;
+  width: 25px;
+  position: absolute;
+}
+.card__container .card .middle .tap__logo_4 {
+  border: 2px solid #000;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  transform: rotate(-90deg);
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  right: -15px;
+}
+.card__container .card .middle .tap__num {
+  position: absolute;
+  right: 5%;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.card__container .card .bottom .valid__dates {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  align-content: center;
+  position: absolute;
+  left: 20%;
+  top: 65%;
+  line-height: 0.9em;
+}
+.card__container .card .bottom .valid__dates_top {
+  color: #b6b6b6;
+  font-size: 1em;
+}
+.card__container .card .bottom .valid__dates_middle {
+  color: #b6b6b6;
+  font-size: 1em;
+}
+.card__container .card .bottom .valid__dates_bottom {
+  font-size: 1.3rem;
+}
+.card__container .card .bottom .card__holder {
+  color: black;
+  position: absolute;
+  bottom: 7%;
+  left: 10%;
+  font-size: 1.8em;
+}
+.card__container .card .bottom .valid__year {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 10%;
+  top: 65%;
+  align-items: center;
+}
+.card__container .card .bottom .valid__year_top {
+  padding: 2px 4px;
+  border: 1px solid black;
+  border-width: 3px;
+  border-style: double;
+}
+.card__container .card .bottom .valid__year_bottom {
+  position: absolute;
+  top: 35px;
+  font-weight: 700;
+  font-size: 1.6em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+footer {
+  position: fixed;
+  padding: 10px 10px 0px 10px;
+  bottom: 0px;
+  height: 80px;
+  color: #666666;
+  width: 100%;
+  text-align: center;
+  background-color: black;
+}
+
+@media only screen and (max-width: 730px) {
+  .top__bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .top__bar .logo {
+    border-bottom: 1pt solid #69a3ff;
+  }
+  .top__bar .logo img {
+    margin: 5px 0px 5px 0px;
+  }
+  .top__bar .navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    right: 0px;
+    top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .card__container {
+    height: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .card__container .card {
+    width: 400px;
+    height: 250px;
+  }
+  .card__container .card .card__top .header {
+    font-size: 1.7em;
+    line-height: 0.1em;
+  }
+  .card__container .card .card__top .sub__header {
+    font-size: 1.3em;
+  }
+  .card__container .card .middle {
+    top: 30px;
+  }
+  .card__container .card .middle .chip {
+    width: 45px;
+    height: 45px;
+    left: 15%;
+  }
+  .card__container .card .middle .chip .chip1 {
+    width: 15px;
+    height: 15px;
+  }
+  .card__container .card .middle .chip .chip2 {
+    width: 15px;
+    height: 15px;
+  }
+  .card__container .card .middle .chip .chip3 {
+    width: 15px;
+    height: 15px;
+  }
+  .card__container .card .middle .chip .chip4 {
+    width: 15px;
+    height: 15px;
+    border-bottom: 0px;
+  }
+  .card__container .card .middle .chip .chip5 {
+    width: 15px;
+    height: 15px;
+    top: 15px;
+  }
+  .card__container .card .middle__logo {
+    width: 90px;
+    left: 38%;
+    top: -50px;
+  }
+  .card__container .card .middle .tap__logo {
+    right: 20%;
+  }
+  .card__container .card .middle .tap__num {
+    right: 3%;
+  }
+  .card__container .card .bottom .valid__year {
+    top: 64%;
+  }
+  .card__container .card .bottom .valid__year_top {
+    padding: 1px 2px;
+    font-size: 0.9em;
+  }
+  .card__container .card .bottom .valid__year_bottom {
+    font-size: 1.2em;
+  }
+  .card__container .card .bottom .card__holder {
+    font-size: 1.4em;
+    bottom: 5%;
+  }
+}
+
+/*# sourceMappingURL=american.css.map */
